@@ -1,0 +1,102 @@
+---
+###server配置
+server:
+  port: 8080
+  #domain: qyh.hachikozjq.top
+  domain: localhost
+  session:
+    cookie:
+      http-only: true
+  tomcat:
+    max-threads: 800
+---
+spring:
+  ###热部署
+  #devtools:
+  #  restart:
+  #    enabled: true
+  ###freemarker配置
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    allow-request-override: true
+    allow-session-override: true
+    suffix: .ftl
+    settings:
+      template_update_delay: 5
+  ##数据库配置
+  datasource:
+     username: root
+     password: root
+     type: com.alibaba.druid.pool.DruidDataSource
+     driverClassName: com.mysql.jdbc.Driver
+     url: jdbc:mysql://127.0.0.1:3306/mydatabase
+
+  ##mvc配置
+  mvc:
+    static-path-pattern: /**
+    favicon:
+      enabled: false
+
+  ##redis配置
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 854640271
+      timeout: 3000
+      pool:
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 0
+
+
+---
+###mybatis配置
+mybatis:
+  type-aliases-package: com.wsgcya.**.pojo
+  mapper-locations: classpath:com/wsgcya/**/mapping/*.xml
+---
+###log配置
+logging:
+  path: logs/
+  #config: classpath:loggback.xml
+
+###微信商户平台
+wxmch:
+  certUrl: /www/cert/apiclient_cert.p12
+  wasoAppID: wx9503816e45e81970
+  wasoMchId: 1441065202
+  wasomd5Key: IWyYlbpZfMUw3AclLM9y41A3swcat5vJ
+
+###系統参数
+system:
+  #uploadPath: /www/media/aiflow/webapps/media/
+  #readPath: http://qyh.hachikozjq.top/media/
+  #downLoadPath: /www/downloadTask/
+  #tempPath: /www/media/aiflow/temp/
+  #domain: http://qyh.hachikozjq.top/
+  #uploadPath: /www/media/aiflow/webapps/media/
+  readPath: http://localhost:8080/media/
+  downLoadPath: E:\tools\space\cb_zjdx_qyh\target\classes/media/
+  tempPath: E:\tools\space\cb_zjdx_qyh\target\classes\media/
+  domain: http://localhost:8080/
+  phoneNumberReg: ^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$
+  judgeTowDecimal: ^[+]?([0-9]+(.[0-9]{1,2})?)$
+  cntelecom: ^(133|149|153|173|177|180|181|189|199)\d{8}$
+
+###微信参数
+wechat:
+  corpId: wx9cbccfaffad8d19c
+  secret: 89cnxL-OiU-bcPXfVEJZK7oRz2a3yBlPliEXSXTKVAs4B09ofjJ-9iGvmnCp9NWq
+  secretCustom: QIOiXpPLRhPFGwnn0z6_3cJHtk8xaQEKzgJ0SmmJZMjD59iL6g2151kCdljfHQ1o
+  oauth2: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9cbccfaffad8d19c&redirect_uri=http%3A%2F%2Fqyh.hachikozjq.top%2Fwechat%2Fentrance%2Foauth2%3Furl%3D$URL$&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+  newsOauth2: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9cbccfaffad8d19c&redirect_uri=http%3A%2F%2Fqyh.hachikozjq.top%2Fwechat%2Fnews%2Fentrance%3Fnews_id%3D$NEWS_ID$&response_type=code&scope=snsapi_base&state=$STATE$#wechat_redirect
