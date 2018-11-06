@@ -1,9 +1,9 @@
 ---
 ###server配置
 server:
-  port: 8080
-  #domain: qyh.hachikozjq.top
-  domain: localhost
+  port: 80
+  domain: www.newaworld.top
+  #domain: localhost
   session:
     cookie:
       http-only: true
