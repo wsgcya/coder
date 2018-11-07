@@ -6,6 +6,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 
+/**
+ * Created by ganchao
+ * @date: 2018/11/7 9:16
+ * @description: 首页跳转
+ */
 @Configuration
 public class DefultView extends WebMvcConfigurationSupport {
     @Override
