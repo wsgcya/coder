@@ -5,4 +5,8 @@
     <select id="getTokenByAppid" parameterType="String" resultType="String">
         SELECT access_token FROM token WHERE appid=#{appid}
     </select>
+
+    <update id="updateTokenByAppid" parameterType="map">
+        UPDATE token SET token=#{token} WHERE appid=#{appid}
+    </update>
 </mapper>    

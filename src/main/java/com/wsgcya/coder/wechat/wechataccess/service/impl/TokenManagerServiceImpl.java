@@ -70,6 +70,7 @@ public class TokenManagerServiceImpl implements TokenManagerService {
             stringRedisTemplate.opsForValue().set(RedisConstants.WECHAT_TOKEN_PREFIX+"_"+appid,token);
             stringRedisTemplate.opsForValue().set("gettoken_"+hour,"token");
             stringRedisTemplate.expire("gettoken_"+hour,3600L, TimeUnit.SECONDS);
+            wechatMapper.updateTokenByAppid(appid,token);
         }catch (Exception e){
             e.printStackTrace();
             logger.error("刷新token出错",e);
