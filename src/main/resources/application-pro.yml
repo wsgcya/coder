@@ -95,11 +95,12 @@ system:
 
 ###微信参数
 wechat:
-  appid:
-  secret:
-  token:
+  appid: wx902c3730bc1c5953
+  secret: d4e416da4fa7eb3ed5d9470de953805d
+  token: wsgcyawsgcya
   createip: 47.97.163.83
   accessType: 1 # 当前公众号授权模式 1 全权 2 第三方平台 3 外部获取(）
   refreshToken: true # 是否允许应用刷新token
   mchId:
   mchKey:
+  EncodingAESKey: XlOQcYd43jzpmGDim2KajxA4tGFkseCAm40Obm2f8Xb
