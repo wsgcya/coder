@@ -28,13 +28,13 @@ public class TimeScheduledTasks {
     private TokenManagerService tokenManagerService;
     @Value("${wechat.appid}")
     private String appid;
-    @Value("${wechat.secret}")
-    private String secret;
+    @Value("${wechat.appsecret}")
+    private String appsecret;
 
 
     @Scheduled(cron = "0 0 0/1 * * ? ")
     public void reportCurrentByCron(){
-        tokenManagerService.refreshToken(appid,secret);
+        tokenManagerService.refreshToken(appid,appsecret);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         String ss =  LocalDateTime.now().format(formatter);
         logger.info(ss+">>>>>更新token完毕!");

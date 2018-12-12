@@ -68,7 +68,7 @@ mybatis:
 ###log配置
 logging:
   path: logs/
-  #config: classpath:loggback.xml
+  config: classpath:logback.xml
 
 ###微信商户平台
 wxmch:
@@ -97,3 +97,9 @@ system:
 wechat:
   appid:
   secret:
+  token:
+  createip: 47.97.163.83
+  accessType: 1 # 当前公众号授权模式 1 全权 2 第三方平台 3 外部获取(）
+  refreshToken: true # 是否允许应用刷新token
+  mchId:
+  mchKey:

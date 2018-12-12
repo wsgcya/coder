@@ -100,26 +100,7 @@
             <classifier>jdk15</classifier>
         </dependency>
         <!--log-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
+
         <!--quartz-->
        <!-- <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -186,6 +167,12 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <!--Wechat-Group/weixin-java-tools-->
+       <!-- <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>3.2.0</version>
+        </dependency>-->
 
 
     </dependencies>
@@ -197,6 +184,18 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+
+        <resources>
+        <resource>
+            <directory>${basedir}/src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+                <include>**/*.properties</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
 	</build>
 
 

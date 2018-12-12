@@ -17,7 +17,8 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.net.ssl.SSLContext;
@@ -41,7 +42,7 @@ import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class HttpProtocolHandler {
-    private static Logger logger = Logger.getLogger(HttpProtocolHandler.class);
+    private static Logger logger = LoggerFactory.getLogger(HttpProtocolHandler.class);
 
     private static String DEFAULT_CHARSET = "GBK";
 
@@ -258,7 +259,7 @@ public class HttpProtocolHandler {
             response = httpClient.execute(httpPost);
             logger.info("response=====>" + response);
         } catch (Exception e) {
-            logger.error(e);
+            logger.error("e",e);
         }
         HttpEntity entity = response.getEntity();
         result = EntityUtils.toString(entity, "UTF-8");

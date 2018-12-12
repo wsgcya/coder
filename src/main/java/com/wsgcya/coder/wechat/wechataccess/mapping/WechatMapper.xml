@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wsgcya.coder.wechat.wechataccess.dao.WechatMapper">
 
-    <select id="getTokenByAppid" parameterType="String" resultType="String">
+    <select id="getTokenByAppid" parameterType="map" resultType="String">
         SELECT access_token FROM token WHERE appid=#{appid}
     </select>
 
     <update id="updateTokenByAppid" parameterType="map">
-        UPDATE token SET token=#{token} WHERE appid=#{appid}
+        UPDATE token SET access_token=#{token} WHERE appid=#{appid}
     </update>
 </mapper>    

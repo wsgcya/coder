@@ -28,8 +28,10 @@ public class WechatApiServiceImpl implements WechatApiService {
 
     @Value("${wechat.appid}")
     private String appid;
-    @Value("${wechat.secret}")
-    private String secret;
+    @Value("${wechat.token}")
+    private String token;
+    @Value("${wechat.appsecret}")
+    private String appsecret;
     @Autowired
     private WechatConfig wechatConfig;
    // @Autowired
@@ -44,7 +46,7 @@ public class WechatApiServiceImpl implements WechatApiService {
     @Override
     public Boolean checkSignature(String signature, String timestamp, String nonce) {
         String[] arr = new String[]{
-                wechatConfig.getToken(), timestamp, nonce
+                token, timestamp, nonce
         };
         // 将 token、timestamp、nonce 三个参数进行字典序排序
         Arrays.sort(arr);
@@ -273,7 +275,7 @@ public class WechatApiServiceImpl implements WechatApiService {
             if ("snsapi_userinfo".equals(scope)) {
                 String pinickname = (String) seesion.getAttribute("pinickname");
                 if (StringUtils.isBlank(pinickname)) {
-                    String wechatToken = tokenManagerService.getToken(appid,secret);
+                    String wechatToken = tokenManagerService.getToken(appid,appsecret);
                     String personInfo = WeixinUtil.getWxUserInfo(wechatToken, openid);
                     JSONObject json = JSON.parseObject(personInfo);
                     String subFlag = json.getString("subscribe");

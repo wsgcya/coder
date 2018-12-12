@@ -1,6 +1,8 @@
 package com.wsgcya.coder.common.util.httpclient;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -10,7 +12,7 @@ import java.io.PrintWriter;
  * @author hzwaso
  */
 public class ResponseUtil {
-    private static Logger logger = Logger.getLogger(ResponseUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(ResponseUtil.class);
 
     public static void reply(HttpServletResponse resp, String str) {
         PrintWriter pw = null;

@@ -34,7 +34,7 @@ spring:
      username: root
      password: root
      type: com.alibaba.druid.pool.DruidDataSource
-     driverClassName: com.mysql.jdbc.Driver
+     driverClassName: com.mysql.cj.jdbc.Driver
      url: jdbc:mysql://47.97.163.83:3306/mydatabase
 
   ##mvc配置
@@ -45,7 +45,7 @@ spring:
 
   ##redis配置
   redis:
-      host: 127.0.0.1
+      host: 47.97.163.83
       port: 6379
       password: 854640271
       timeout: 3000
@@ -68,7 +68,7 @@ mybatis:
 ###log配置
 logging:
   path: logs/
-  #config: classpath:loggback.xml
+  config: classpath:logback.xml
 
 ###微信商户平台
 wxmch:
@@ -95,5 +95,11 @@ system:
 
 ###微信参数
 wechat:
-  appid:
-  secret:
+  appid: wxd95e67cbda315a70
+  appsecret: 0be9036d214dcda2f7a28f169519d4a7
+  token: wsgcya
+  createip: 47.97.163.83
+  accessType: 1 # 当前公众号授权模式 1 全权 2 第三方平台 3 外部获取(请自己实现接口com.telincn.wechat.service.ExternalTokenHandler）
+  refreshToken: false # 是否允许应用刷新token
+  mchId:
+  mchKey:

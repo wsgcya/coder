@@ -12,7 +12,7 @@ public interface WechatMapper {
     * @param: [appid]
     * @return: java.lang.String
     */
-    String getTokenByAppid(String appid);
+    String getTokenByAppid(@Param("appid") String appid);
 
     /**
     * @author: ganchao
