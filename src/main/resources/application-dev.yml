@@ -42,21 +42,10 @@ spring:
     static-path-pattern: /**
     favicon:
       enabled: false
-
-  ##redis配置
   redis:
-      host: 47.97.163.83
-      port: 6379
-      password: 854640271
-      timeout: 3000
-      pool:
-        max-active: 8
-        # 连接池最大阻塞等待时间（使用负值表示没有限制）
-        max-wait: -1
-        # 连接池中的最大空闲连接
-        max-idle: 8
-        # 连接池中的最小空闲连接
-        min-idle: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 854640271
 
 
 ---
@@ -97,7 +86,7 @@ system:
 wechat:
   appid: wxd95e67cbda315a70
   appsecret: 0be9036d214dcda2f7a28f169519d4a7
-  token: wsgcya
+  token: wsgcyawsgcya
   createip: 47.97.163.83
   accessType: 1 # 当前公众号授权模式 1 全权 2 第三方平台 3 外部获取(请自己实现接口com.telincn.wechat.service.ExternalTokenHandler）
   refreshToken: false # 是否允许应用刷新token

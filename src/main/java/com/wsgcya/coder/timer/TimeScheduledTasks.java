@@ -1,5 +1,6 @@
 package com.wsgcya.coder.timer;
 
+import com.wsgcya.coder.common.constant.WchatConstans;
 import com.wsgcya.coder.wechat.wechataccess.service.TokenManagerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,10 +27,10 @@ public class TimeScheduledTasks {
 
     @Autowired
     private TokenManagerService tokenManagerService;
-    @Value("${wechat.appid}")
-    private String appid;
-    @Value("${wechat.appsecret}")
-    private String appsecret;
+   //@Value("${wechat.appid}")
+    private String appid = WchatConstans.appid;
+    //@Value("${wechat.appsecret}")
+    private String appsecret=WchatConstans.appsecret;
 
 
     @Scheduled(cron = "0 0 0/1 * * ? ")

@@ -11,11 +11,6 @@ server:
     max-threads: 800
 ---
 spring:
-  ###热部署
-  #devtools:
-  #  restart:
-  #    enabled: true
-  ###freemarker配置
   freemarker:
     cache: false
     charset: UTF-8
@@ -34,7 +29,7 @@ spring:
      username: root
      password: root
      type: com.alibaba.druid.pool.DruidDataSource
-     driverClassName: com.mysql.jdbc.Driver
+     driverClassName: com.mysql.cj.jdbc.Driver
      url: jdbc:mysql://127.0.0.1:3306/mydatabase
 
   ##mvc配置
@@ -96,7 +91,7 @@ system:
 ###微信参数
 wechat:
   appid: wx902c3730bc1c5953
-  secret: d4e416da4fa7eb3ed5d9470de953805d
+  appsecret: d4e416da4fa7eb3ed5d9470de953805d
   token: wsgcyawsgcya
   createip: 47.97.163.83
   accessType: 1 # 当前公众号授权模式 1 全权 2 第三方平台 3 外部获取(）
